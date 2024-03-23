@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+    <!--
+    <ion-toolbar>
+      <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+    -->
+    
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Mi nueva pagina!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container">
+    <!--
+      <strong>Ready to create an app?</strong>
+      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    -->
+    
+    <p *ngIf="verdadero">Si ves este mensaje, <strong>verdadero</strong> es <strong>true</strong></p>
+    <p [ngClass]="{'rojo': verdadero, 'azul': verdadero == false}">Si <strong>verdadero</strong> es verdadero, 
+      este texto sera <strong>rojo</strong>,
+    pero si es falso, entonces sera <strong>azul</strong></p>
+  </div>
+
+</ion-content>
