@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { resetFakeAsyncZone } from '@angular/core/testing';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Tarea } from 'src/tarea';
+import { AgregarTareaComponent } from '../agregar-tarea/agregar-tarea.component';
 
 @Component({
   selector: 'app-tareas',
@@ -19,26 +19,27 @@ export class TareasComponent  implements OnInit {
 
   tareas: Tarea[] = [];
 
-  isModalOpen = false;
 
-  setOpen(isOpen: boolean) {
-    this.isModalOpen = isOpen;
-  }
-
-  nuevaTarea: Tarea = 
-  {
-    nombre: '',
-    mes: 1,
-    anio: 1,
-    descripcion: '',
-  }
+  nuevaTarea = 
+    {
+      nombre: '',
+      mes: 1,
+      anio: 1,
+      descripcion: '',
+    } ;
   
-  agregarTarea(){;
+  agregarTarea(nuevaTarea: Tarea){
     this.tareas.push(this.nuevaTarea);
     this.modalController.dismiss(this.nuevaTarea)
-    this.isModalOpen = false;
+    //this.isModalOpen = false;
+    this.nuevaTarea = 
+    {
+      nombre: '',
+      mes: 1,
+      anio: 1,
+      descripcion: '',
+    }
   }
 
   abrirDetalles = false;
-
 }
