@@ -4,5 +4,6 @@ export interface Tarea{
     mes: number;
     anio: number;
     descripcion: string;
+    mostrarDesc: false;
 
 }

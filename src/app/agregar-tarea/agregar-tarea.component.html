@@ -15,10 +15,10 @@
       <form #tareaForm="ngForm">
         <ion-list>
           <ion-item>
-            <ion-input label="Nombre" name="nombre"  placeholder="Ingrese el nombre de la tarea..." name="textInput" [(ngModel)]="nuevaTarea.nombre" required></ion-input>
+            <ion-input label="Nombre" name="nombre"  placeholder="Ingrese el nombre de la tarea..." name="textInput" [(ngModel)]="nuevaTarea.nombre" required="true" mode="md" fill="outline"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-select name="mes" label="Mes" interface="popover"  slot="start" [(ngModel)]="nuevaTarea.mes" required>
+            <ion-select name="mes" label="Mes" interface="popover"  slot="start" [(ngModel)]="nuevaTarea.mes" required="true" mode="md" fill="outline">
               <ion-select-option value="01">Enero</ion-select-option>
               <ion-select-option value="02">Febrero</ion-select-option>
               <ion-select-option value="03">Marzo</ion-select-option>
@@ -32,7 +32,7 @@
               <ion-select-option value="11">Noviembre</ion-select-option>
               <ion-select-option value="12">Diciembre</ion-select-option>
             </ion-select>
-            <ion-select name="año" label="Año" interface="popover"  slot="start" [(ngModel)]="nuevaTarea.anio" required>
+            <ion-select name="año" label="Año" interface="popover"  slot="start" [(ngModel)]="nuevaTarea.anio" required="true" mode="md" fill="outline">
               <ion-select-option value="2024">2024</ion-select-option>
               <ion-select-option value="2025">2025</ion-select-option>
               <ion-select-option value="2026">2026</ion-select-option>
@@ -53,7 +53,7 @@
             ></ion-textarea>
           </ion-item>
         </ion-list>
-        <ion-button expand="block" color="secondary" (click)="agregarTarea()" >Agregar</ion-button>
+        <ion-button expand="block" color="success" [disabled]="tareaForm.invalid" (click)="agregarTarea()">Agregar</ion-button>
       </form>
     </ion-content>
   
