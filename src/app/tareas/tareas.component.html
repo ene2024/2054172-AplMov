@@ -8,7 +8,9 @@
 
 <ion-card *ngFor="let tarea of tareas, index as i">
   <ion-card-header>
-    <ion-card-title> {{tarea.nombre}} </ion-card-title>
+    <ion-card-title> 
+      {{tarea.nombre}}
+    </ion-card-title>
   </ion-card-header>
   <ion-card-content>
     Fecha: {{tarea.mes}} / {{tarea.anio}}
@@ -40,11 +42,12 @@
       <b>Descripción: </b>
       <span> {{tarea.descripcion}}</span>
     </p>
-    <ion-button expand="full" fill="clear" (click)="mostrarDescripcion(tarea)" > 
-      <span>{{ tarea.mostrarDesc ? '- Ver menos detalles' : '+ Ver mas detalles' }}</span>
+    <ion-button [routerLink]="['/tarea', i]" expand="full" fill="clear"  > Ver Detalles
+      <!--<span>{{ tarea.mostrarDesc ? '- Ver menos detalles' : '+ Ver mas detalles' }}</span> (click)="mostrarDescripcion(tarea)"-->
     </ion-button>
     </ion-card-content>
-  
+
+    
 
 </ion-card>
 

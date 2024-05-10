@@ -10,12 +10,14 @@ export class TareasServiceService {
 
   constructor() { }
 
+  indice=0;
+
   servagregartarea(nuevatarea: Tarea){
     this.tareas.push(nuevatarea);
   }
 
-  obtenerTarea(){
-    return this.tareas;
+  obtenerTarea(id: any){
+    return this.tareas[id];
   }
 
   eliminarTarea(id: number){

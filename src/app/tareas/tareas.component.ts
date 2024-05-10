@@ -13,7 +13,8 @@ export class TareasComponent  implements OnInit {
 
   constructor(private modalController:ModalController, private tareaserv: TareasServiceService) { }
   
-
+  indice=0;
+  
   ngOnInit(): void {
     this.tareaserv.obtenerTarea;
   }
@@ -34,6 +35,10 @@ export class TareasComponent  implements OnInit {
 
   mostrarDescripcion(tarea: any) {
     tarea.mostrarDesc = !tarea.mostrarDesc;
+  }
+
+  vistaTareas(ids: number){
+    this.indice=ids;
   }
 
 
